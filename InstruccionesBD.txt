@@ -1,0 +1,133 @@
+Creamos la base de datos restaurantes
+
+CREATE DATABASE restaurantes;
+
+
+Creamos una tabla de usuarios
+
+CREATE TABLE usuarios(
+
+id INT(11) AUTO_INCREMENT PRIMARY KEY,
+
+username VARCHAR(50)  NOT NULL,
+
+rol  VARCHAR(7) NOT NULL,
+
+email  VARCHAR(70) NOT NULL,
+
+password VARCHAR(100)
+
+);
+
+
+Creamos una tabla de restaurantes
+
+CREATE TABLE restaurantes(
+
+id INT(11) AUTO_INCREMENT PRIMARY KEY,
+
+name VARCHAR(50)  NOT NULL,
+
+userOwner  INT(11) NOT NULL
+
+);
+
+Creamos una tabla de valoraciones
+
+CREATE TABLE valoraciones(
+
+id INT(11) AUTO_INCREMENT PRIMARY KEY,
+
+review VARCHAR(150),
+
+score INT(2) NOT NULL,
+
+fk_idRestaurantes INT(11),
+
+fk_idUser INT(11),
+
+FOREIGN KEY (fk_idRestaurantes) REFERENCES restaurantes(id),
+
+FOREIGN KEY (fk_idUser) REFERENCES usuarios(id)
+
+);
+
+Creamos un usuario
+
+INSERT INTO usuarios (id, username, rol, email, password)
+ VALUES ( null, "mperez", "default", "mperez@gmail.com", "loquesea")
+
+Creamos un restaurante
+
+INSERT INTO restaurantes (id, name, userOwner)
+ VALUES ( null, "Las Trinitarias", "1" )
+
+ Creamos un restaurante
+
+INSERT INTO restaurantes (id, name, userOwner)
+ VALUES ( null, "La Chimenea", "1" )
+
+Creamos un usuario admin
+
+INSERT INTO usuarios (id, username, rol, email, password)
+ VALUES ( null, "marrazola", "admin", "marrazola@gmail.com", "living@granada")
+
+ Creamos un usuario default
+
+INSERT INTO usuarios (id, username, rol, email, password)
+ VALUES ( null, "lariza", "default", "ariza@gmail.com", "12&loquesea")
+
+Creamos un restaurante
+
+ INSERT INTO restaurantes (id, name, userOwner)
+ VALUES ( null, "El Olivo", "3" )
+
+Creamos una Valoración
+INSERT INTO valoraciones (id, review, score, fk_idRestaurantes, fk_idUser)
+VALUES ( null, "Me gusta mucho el restaurante el servicio es excelente", 8, 1, 2)
+
+Listamos
+
+SELECT * FROM valoraciones;
+SELECT * FROM usuarios;
+SELECT * FROM restaurantes;
+
+Modificamos
+1.
+
+UPDATE usuarios SET
+
+email="trinitarias@mail.com" WHERE
+
+id=1;
+
+2.
+
+UPDATE restaurantes SET
+
+name="El Boliche" WHERE
+
+id=1;
+
+3.
+UPDATE valoraciones SET
+
+score=5 WHERE
+
+id=1;
+
+
+Eliminamos
+
+DELETE FROM valoraciones WHERE ID = 1;
+DELETE FROM restaurantes WHERE ID = 1;
+
+
+
+
+
+
+
+
+
+

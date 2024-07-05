@@ -1,0 +1,86 @@
+
+GET http://localhost:3333/restaurantes
+
+
+###
+
+POST http://localhost:3333/restaurantes
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjksImV4cGlyZWRBdCI6MTcyMDIwNTA3MywiY3JlYXRlZEF0IjoxNzIwMjAxNDczLCJpYXQiOjE3MjAyMDE0NzN9.B3K0oDRWoUFtuHOgR-ornoTlaYZ-zJmlEvj2A5lARo4
+
+{
+    "name": "La Sonrisa",
+    "userOwner": 9
+}
+
+###
+
+PUT http://localhost:3333/restaurantes/10
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjksImV4cGlyZWRBdCI6MTcyMDIwNTA3MywiY3JlYXRlZEF0IjoxNzIwMjAxNDczLCJpYXQiOjE3MjAyMDE0NzN9.B3K0oDRWoUFtuHOgR-ornoTlaYZ-zJmlEvj2A5lARo4
+
+{
+    "name": "Loca María I" 
+}
+
+
+###
+
+DELETE  http://localhost:3333/restaurantes/10
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjksImV4cGlyZWRBdCI6MTcyMDIwNTA3MywiY3JlYXRlZEF0IjoxNzIwMjAxNDczLCJpYXQiOjE3MjAyMDE0NzN9.B3K0oDRWoUFtuHOgR-ornoTlaYZ-zJmlEvj2A5lARo4
+
+###
+
+POST http://localhost:3333/usuarios
+Content-Type: application/json
+
+{
+    "name": "Miguel",
+    "email": "miguel@gmail.com",
+    "password": "12348"
+    
+}
+
+###
+
+POST http://localhost:3333/usuarios
+Content-Type: application/json
+
+{
+    "name": "Azul",
+    "email": "azul@gmail.com",
+    "password": "12348azul1"
+    
+}
+
+
+###
+POST http://localhost:3333/usuarios/login
+Content-Type: application/json
+
+{
+    "name": "Miguel",
+    "email": "miguel@gmail.com",
+    "password": "12348"
+    
+}
+
+
+###
+POST http://localhost:3333/usuarios/login
+Content-Type: application/json
+
+{
+     "name": "Azul",
+    "email": "azul@gmail.com",
+    "password": "12348azul1"
+    
+}
+
+
+
+
+
+
+
+
